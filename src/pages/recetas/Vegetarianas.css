@@ -1,10 +1,10 @@
-.cards{
+.cards {
     width: 100%;
     height: 100%;
     display: flex;
     flex-wrap: wrap;
     gap: 30px;
-    margin-top: 50px; /* Agrega más espacio desde el header */
+    margin-top: 50px; /* Espacio desde el header */
 }
 
 .cards section {
@@ -17,17 +17,17 @@
     margin-top: 15px;
     box-shadow: 5px 5px 10px black;
     padding: 10px;
-    
 }
 
-.cards section div{
+.cards section div {
     width: 100%;
     display: flex;
     justify-content: space-evenly;
     align-items: center;
 }
 
-.cards section div button, .cards section div a{
+.cards section div button,
+.cards section div a {
     text-decoration: none;
     width: 25%;
     display: flex;
@@ -37,5 +37,72 @@
     background: none;
     border: solid 1px black;
     cursor: pointer;
+    position: relative;
+    font-size: 16px;
+    overflow: hidden;
+}
 
+
+
+/* Animación de hover en los botones */
+.cards section div button::after,
+.cards section div a::after {
+    content: "";
+    position: absolute;
+    width: 50%;
+    height: 2px;
+    bottom: 0;
+    left: 100%;
+    transition: left 0.5s ease-in-out;
+    background-color: black;
+}
+.cards section div button:hover::after,
+.cards section div a:hover::after {
+    left: 50%;
+}
+
+/* Estilos para los diferentes tipos de botones */
+.cards section div .eliminar::after {
+    background-color: red;
+}
+
+.cards section div .editar::after {
+    background-color: orange;
+}
+
+.cards section div .detalle::after {
+    background-color: black;
+}
+
+/* Animación de hover en los botones */
+.cards section div button::before,
+.cards section div a::before {
+    content: "";
+    position: absolute;
+    width: 50%;
+    height: 2px;
+    bottom: 0;
+    left: -100%;
+    transition: left 0.5s ease-in-out;
+    background-color: black;
+}
+
+
+
+.cards section div button:hover::before,
+.cards section div a:hover::before {
+    left: 0;
+}
+
+/* Estilos para los diferentes tipos de botones */
+.cards section div .eliminar::before {
+    background-color: red;
+}
+
+.cards section div .editar::before {
+    background-color: orange;
+}
+
+.cards section div .detalle::before {
+    background-color: black;
 }

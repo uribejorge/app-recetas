@@ -14,9 +14,9 @@ const Vegetarianas = () => {
             <p>Dificultad: {receta.dificultad}</p>
             <p>Tiempo: {receta.tiempo}</p>
             <div>
-              <button>Eliminar</button>
-              <Link>Editar</Link>
-              <Link>Detalles</Link>
+              <button className="eliminar">Eliminar</button>
+              <Link className="editar">Editar</Link>
+              <Link className="detalle">Detalles</Link>
             </div>
           </section>
         ))
