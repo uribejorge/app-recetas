@@ -21,6 +21,19 @@ main {
     align-items: center;
     gap: 20px;
     font-size: 24px; /* Tamaño de letra más grande para los elementos de navegación */
+    height: 700%;
+    justify-content: center;
+}
+.panel-control nav a{
+    text-decoration: none;
+    letter-spacing: 1px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50%;
+    height: 30px;
+    background-color: black;
+    color: cornsilk;
 }
 
 .panel-control section {
@@ -29,4 +42,17 @@ main {
     align-items: center;
     justify-content: center;
     font-size: 26px; /* Tamaño de letra más grande para la sección */
+    gap: 20px;
+}
+
+
+@media (max-width:700px) {
+    .panel-control{
+        flex-direction: column;
+    }
+    .panel-control nav {
+        width: 100%;
+        height: auto;
+        padding: 10px;
+    }
 }

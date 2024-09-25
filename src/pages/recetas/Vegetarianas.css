@@ -1,0 +1,41 @@
+.cards{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    margin-top: 50px; /* Agrega más espacio desde el header */
+}
+
+.cards section {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+    width: 400px;
+    height: 320px;
+    margin-top: 15px;
+    box-shadow: 5px 5px 10px black;
+    padding: 10px;
+    
+}
+
+.cards section div{
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.cards section div button, .cards section div a{
+    text-decoration: none;
+    width: 25%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 30px;
+    background: none;
+    border: solid 1px black;
+    cursor: pointer;
+
+}
