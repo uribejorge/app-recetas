@@ -1,18 +1,26 @@
 import { useState } from "react";
-import React from "react";
 import './Login.css';
-
+let urlUsuarios = 'http://localhost:3000/usuarios'
 
 const Login = () => {
-    const [usuario, setUsuario] = useState('')
-    const [Contraseña, setContraseña] = useState('')
-    const [Correo, setCorreo] = useState('')
+    const [usuario, setUsuario] = useState('')/* strimg */
+    const [Contraseña, setContraseña] = useState('')/* strimg */
+    const [Correo, setCorreo] = useState('')/* strimg */
+    const [usuarios, setUsuarios] = useState([])/*  arreglo vasido*/
+
+    function getUsuarios () {
+        fetch('http://localhost:3000/usuarios')
+        .then(Response => Response.json)
+    }
 
     console.log(usuario)
     function signIn() {
         if (usuario == 'jorge' && Contraseña == '123456') {
             alert('inicio de sesion correcto')
+            .then(json => console.log(json))
         }
+
+        getUsuarios()
 
     }
     return (
