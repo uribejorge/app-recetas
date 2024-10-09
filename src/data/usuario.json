@@ -1,3 +1,43 @@
 {
-    "usuarios": []
+  "usuarios": [
+    {
+      "id": "27dr",
+      "user": "admin",
+      "password": "12345",
+      "name": "jorge uribe",
+      "email": "jorge@gmail.com",
+      "hobbies": [
+        "gimnacio",
+        "leer",
+        "futbol",
+        "video juegos"
+      ]
+    },
+    {
+      "id": "27hd",
+      "user": "proyecto-web",
+      "password": "12345",
+      "name": "jorge uribe",
+      "email": "jorge@gmail.com",
+      "hobbies": [
+        "gimnacio",
+        "leer",
+        "futbol",
+        "video juegos"
+      ]
+    },
+    {
+      "id": "e32f",
+      "user": "speradmin",
+      "password": "12345",
+      "name": "jorge rodriguez",
+      "email": "jorge@gmail.com",
+      "hobbies": [
+        "gimnacio",
+        "leer",
+        "futbol",
+        "video juegos"
+      ]
+    }
+  ]
 }
