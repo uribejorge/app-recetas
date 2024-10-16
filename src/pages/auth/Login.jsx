@@ -1,50 +1,68 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 import './Login.css';
-let urlUsuarios = 'http://localhost:3000/usuarios'
+
+let urlUsuarios = 'http://localhost:3000/usuarios';
 
 const Login = () => {
-    const [usuario, setUsuario] = useState('')/* strimg */
-    const [Contraseña, setContraseña] = useState('')/* strimg */
-    const [Correo, setCorreo] = useState('')/* strimg */
-    const [usuarios, setUsuarios] = useState([])/*  arreglo vasido*/
+    const [usuarios, setUsuarios] = useState([]); // Array para los usuarios recibidos del backend
+    const [usuarioInput, setUsuarioInput] = useState(''); // Valor ingresado en el input de usuario
+    const [contraseñaInput, setContraseñaInput] = useState(''); // Valor ingresado en el input de contraseña
+    const [correoInput, setCorreoInput] = useState(''); // Valor ingresado en el input de correo
+    let redireccion = useNavigate()
 
-    function getUsuarios () {
-        fetch('http://localhost:3000/usuarios')
-        .then(Response => Response.json)
+    function getUsuarios() {
+        fetch(urlUsuarios)
+            .then(response => response.json())
+            .then(json => setUsuarios(json)) // Guardamos el array de usuarios
+            .catch(error => console.log(error)); 
     }
 
-    console.log(usuario)
+    useEffect(() => {
+        getUsuarios();
+    }, []);
+
+    console.log(usuarios);
+
     function signIn() {
-        if (usuario == 'jorge' && Contraseña == '123456') {
-            alert('inicio de sesion correcto')
-            .then(json => console.log(json))
+        if (findUser()) {
+            redireccion('/')
+        } else {
+            alert('Usuario o contraseña incorrectos');
         }
-
-        getUsuarios()
-
     }
+
+    function findUser() {
+        let auth = usuarios.some((item) => item.user === usuarioInput && item.password === contraseñaInput); // Comparamos los valores ingresados con los usuarios del backend
+        return auth;
+    }
+
     return (
         <form className="form" action="">
-            <section className="">
+            <section>
                 <div>
                     <label htmlFor="usuario">Usuario</label>
-                    <input onChange={(e) => { setUsuario(e.target.value) }}
+                    <input onChange={(e) => { setUsuarioInput(e.target.value) }}
                         id="usuario" type="text" />
                 </div>
                 <br />
                 <div>
                     <label htmlFor="password">Contraseña</label>
-                    <input onChange={(e) => { setContraseña(e.target.value) }}
-                        id="password" type="text" />
+                    <input onChange={(e) => { setContraseñaInput(e.target.value) }}
+                        id="password" type="password" />
                 </div>
-                <label htmlFor="password">Contraseña</label>
-                    <input onChange={(e) => { setCorreo(e.target.value) }}
-                        id="password" type="text" />
                 <br />
-                <button onClick={signIn} className="button" type="button" >Iniciar sesión</button>
+                <div>
+                    <label htmlFor="correo">Correo</label>
+                    <input onChange={(e) => { setCorreoInput(e.target.value) }}
+                        id="correo" type="email" />
+                </div>
+                <br />
+                <button onClick={signIn} className="button" type="button">Iniciar sesión</button>
             </section>
         </form>
-    )
-}
+    );
+};
 
-export default Login
+export default Login;
+
