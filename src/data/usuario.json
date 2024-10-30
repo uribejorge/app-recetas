@@ -38,6 +38,76 @@
         "futbol",
         "video juegos"
       ]
+    },
+    {
+      "id": "1c6c",
+      "username": "",
+      "password": "",
+      "confirmPassword": "",
+      "name": "",
+      "email": "",
+      "phone": "",
+      "hobbies": ""
+    },
+    {
+      "id": "a58b",
+      "username": "",
+      "password": "",
+      "confirmPassword": "",
+      "name": "",
+      "email": "",
+      "phone": "",
+      "hobbies": ""
+    },
+    {
+      "id": "fc4c",
+      "username": "",
+      "password": "",
+      "confirmPassword": "",
+      "name": "",
+      "email": "",
+      "phone": "",
+      "hobbies": ""
+    },
+    {
+      "id": "2db9",
+      "username": "",
+      "password": "",
+      "confirmPassword": "",
+      "name": "",
+      "email": "",
+      "phone": "",
+      "hobbies": ""
+    },
+    {
+      "id": "299b",
+      "username": "",
+      "password": "",
+      "confirmPassword": "",
+      "name": "",
+      "email": "",
+      "phone": "",
+      "hobbies": ""
+    },
+    {
+      "id": "9bf1",
+      "username": "",
+      "password": "",
+      "confirmPassword": "",
+      "name": "",
+      "email": "",
+      "phone": "",
+      "hobbies": ""
+    },
+    {
+      "id": "fb1a",
+      "username": "jorge ",
+      "password": "12345",
+      "confirmPassword": "12345",
+      "name": "",
+      "email": "jorge.112180@gail.com",
+      "phone": "3233",
+      "hobbies": "futbol"
     }
   ]
 }

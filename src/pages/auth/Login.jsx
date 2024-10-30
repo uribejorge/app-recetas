@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
+import Swal from 'sweetalert2'
 import './Login.css';
 
 let urlUsuarios = 'http://localhost:3000/usuarios';
@@ -9,7 +10,7 @@ const Login = () => {
     const [usuarioInput, setUsuarioInput] = useState(''); // Valor ingresado en el input de usuario
     const [contraseñaInput, setContraseñaInput] = useState(''); // Valor ingresado en el input de contraseña
     const [correoInput, setCorreoInput] = useState(''); // Valor ingresado en el input de correo
-    let redireccion = useNavigate()
+    let redireccion = useNavigate();
 
     function getUsuarios() {
         fetch(urlUsuarios)
@@ -26,9 +27,37 @@ const Login = () => {
 
     function signIn() {
         if (findUser()) {
-            redireccion('/')
+            let timerInterval;
+Swal.fire({
+  title: "esta a punto a punto de ser redireccionado",
+  html: "esta ventana se cerrara en <b><b> milisegundos",
+  timer: 2000,
+  timerProgressBar: true,
+  didOpen: () => {
+    Swal.showLoading();
+    const timer = Swal.getPopup().querySelector("b");
+    timerInterval = setInterval(() => {
+      timer.textContent = `${Swal.getTimerLeft()}`;
+    }, 100);
+  },
+  willClose: () => {
+    clearInterval(timerInterval);
+  }
+}).then((result) => {
+  /* Read more about handling dismissals below */
+  if (result.dismiss === Swal.DismissReason.timer) {
+    console.log("I was closed by the timer");
+  }
+});
+            redireccion('/');
+            
         } else {
-            alert('Usuario o contraseña incorrectos');
+            Swal.fire({
+                icon: "error",
+                title: "Oops...",
+                text: "Something went wrong!",
+                footer: '<a href="#">Why do I have this issue?</a>'
+              });
         }
     }
 
@@ -42,23 +71,36 @@ const Login = () => {
             <section>
                 <div>
                     <label htmlFor="usuario">Usuario</label>
-                    <input onChange={(e) => { setUsuarioInput(e.target.value) }}
-                        id="usuario" type="text" />
+                    <input 
+                        onChange={(e) => setUsuarioInput(e.target.value)}
+                        value={usuarioInput}
+                        id="usuario" 
+                        type="text" 
+                    />
                 </div>
                 <br />
                 <div>
                     <label htmlFor="password">Contraseña</label>
-                    <input onChange={(e) => { setContraseñaInput(e.target.value) }}
-                        id="password" type="password" />
+                    <input 
+                        onChange={(e) => setContraseñaInput(e.target.value)}
+                        value={contraseñaInput}
+                        id="password" 
+                        type="password" 
+                    />
                 </div>
                 <br />
                 <div>
                     <label htmlFor="correo">Correo</label>
-                    <input onChange={(e) => { setCorreoInput(e.target.value) }}
-                        id="correo" type="email" />
+                    <input 
+                        onChange={(e) => setCorreoInput(e.target.value)}
+                        value={correoInput}
+                        id="correo" 
+                        type="email" 
+                    />
                 </div>
                 <br />
                 <button onClick={signIn} className="button" type="button">Iniciar sesión</button>
+                <Link to="/register">¿No tiene cuenta?</Link>
             </section>
         </form>
     );

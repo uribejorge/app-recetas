@@ -1,11 +1,17 @@
 import Login from "../pages/auth/Login";
+import Register from "../pages/auth/Register";
 import Dashboard from "../pages/Dashboard";
-import Vegetarianas from '../pages/recetas/Vegetarianas'
-import NoVegetarianas from '../pages/recetas/NoVegetarianas'
+import Vegetarianas from '../pages/recetas/Vegetarianas';
+import NoVegetarianas from '../pages/recetas/NoVegetarianas';
+
 export let enrutadorApp = [
     {
-        element: <Login />,
         path: "/login",
+        element: <Login />,
+    },
+    {
+        path: "/register",
+        element: <Register />,
     },
     {
         path: "/",
@@ -13,12 +19,12 @@ export let enrutadorApp = [
         children: [
             {
                 path: 'vegetarianas',
-                element: <Vegetarianas />
+                element: <Vegetarianas />,
             },
             {
                 path: 'no-vegetarianas',
-                element: <NoVegetarianas />
+                element: <NoVegetarianas />,
             }
         ]
-    },
-]
+    }
+];

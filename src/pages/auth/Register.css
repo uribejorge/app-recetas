@@ -1,0 +1,9 @@
+/* Register.css */
+
+.register-container {
+    display: flex;
+    justify-content: center; /* Centra horizontalmente */
+    align-items: center; /* Centra verticalmente */
+    height: 100vh; /* Ocupa toda la altura de la ventana */
+    background-color: #f0f0f0; /* Color de fondo suave */
+}
