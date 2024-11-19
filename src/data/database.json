@@ -1,0 +1,65 @@
+{
+  "usuarios": [
+    {
+      "id": "25dr",
+      "user": "admin",
+      "password": "12345",
+      "name": "Jaime Zapata",
+      "email": "correo@correo.com",
+      "hobbies": [
+        "Domir",
+        "Comer",
+        "Jugar Play"
+      ]
+    },
+    {
+      "id": "5685",
+      "user": "newuser",
+      "password": "12345",
+      "name": "Andrea Restrepo",
+      "email": "correo@correo.com",
+      "hobbies": [
+        "Domir",
+        "Comer",
+        "Jugar Play"
+      ]
+    },
+    {
+      "id": "3c0a",
+      "user": "superadmin",
+      "password": "12345",
+      "name": "Luisa Cano",
+      "email": "correo@correo.com",
+      "hobbies": [
+        "Domir",
+        "Comer",
+        "Jugar Play"
+      ]
+    },
+    {
+      "id": "fe9b",
+      "user": "admindos",
+      "password": "",
+      "name": "",
+      "email": "",
+      "hobbies": ""
+    }
+  ],
+  "vegetarianas": [
+    {
+      "id": "1",
+      "nombre": "Tofu",
+      "descripcion": "Receta a base de Tofu y otros vegetales",
+      "dificultad": "Media",
+      "tiempo": "3 Horas"
+    },
+    {
+      "id": "2",
+      "nombre": "Tocino Vegano",
+      "descripcion": "Tocino a base de costra de Berenjena",
+      "dificultad": "Media",
+      "tiempo": "3 Horas"
+    }
+  ],
+  "no-vegetarianas": []
+}

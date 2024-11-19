@@ -1,0 +1,46 @@
+.form {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 10px;
+    background-image: url('/public/fondo.avif');
+    background-position: center center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.form section {
+    width: 40%;
+    height: 40%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    backdrop-filter: blur(10px);
+    gap: 10px;
+}
+
+.form section div{
+    gap: 10px;
+    width: 50%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.form section div input{
+    height: 25px;
+    outline: none;
+}
+
+.form section .button{
+    width: 30%;
+    margin-top: 20px;
+    height: 30px;
+    border-radius: 10px;
+    border: none;
+    cursor: pointer;
+    background-color: white;
+}
